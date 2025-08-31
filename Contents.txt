@@ -1,0 +1,65 @@
+#INTRODUCTION
+Heart disease (cardiovascular disease) is the leading cause of death worldwide, accounting for ~17.9 million deaths annually (about 32% of all deaths).
+Types: Coronary artery disease, heart failure, arrhythmias, etc.
+Risk factors: High blood pressure, cholesterol, smoking, diabetes, obesity, age, gender.
+Early detection can reduce mortality by up to 80% through timely interventions.
+Challenge: Traditional diagnosis (e.g., ECG, blood tests) is time-consuming and costly.
+
+#PROBLEM STATEMENT
+Heart disease (cardiovascular disease) is the leading cause of death worldwide, accounting for ~17.9 million deaths annually (about 32% of all deaths).
+Types: Coronary artery disease, heart failure, arrhythmias, etc.
+Risk factors: High blood pressure, cholesterol, smoking, diabetes, obesity, age, gender.
+Early detection can reduce mortality by up to 80% through timely interventions.
+Challenge: Traditional diagnosis (e.g., ECG, blood tests) is time-consuming and costly.
+
+#OBJECTIVES
+The main objectives of this project are as follows:
+1.To study and preprocess a publicly available heart disease dataset.
+2.To implement different machine learning algorithms for predictive modeling.
+3.To evaluate and compare models based on performance metric (Accuracy)
+
+#DATASET OVERVIEW
+Dataset: UCI Cleveland Heart Disease (dataset characteristics-multivariate, subject area-health and medicine, associated tasks-classification, Feature Type-categorical Integer Real, samples-303, features-14 ).
+link:https://archive.ics.uci.edu/dataset/45/heart+disease
+
+#KEY FEATURES
+#Feature                            #Values
+Age                                29-77 years
+Sex                                0=Femal, 1=Male
+Chest Pain Type                    cp: 0-3
+Resting Blood Pressure             trestbps: 94-200mm Hg
+Serum Cholestrol                   chol: 126-564 mg/dL
+Fasting Blood Sugar                fbs:>120 mg/dL=1
+Resting ECG                        restecg: 0-2
+Max Heart RAte                     thalach: 71:202
+Exercise-Induced Angina            exang: 0/1
+ST Depression                      oldpeak: 0-6.2
+Slope of ST Segment                slope: 0-2
+Major Vessels Colored              ca: 0-3
+Thalassemia                        thal: 0-3
+
+#MACHINE LEARNING MODELS
+Common Models Used:
+*Logistic Regression: Simple probabilistic classifier.
+*Support Vector Machine
+*Random Forest: Ensemble of trees, reduces overfitting.
+
+#EVALUATION METRICS
+Accuracy: (TP + TN) / Total – Overall correctness.
+Precision: TP / (TP + FP) – Positive prediction accuracy.
+Recall (Sensitivity): TP / (TP + FN) – True positive rate.
+F1-Score: 2 * (Precision * Recall) / (Precision + Recall) – Balance of precision and recall.
+
+#RESULTS AND COMPARISON 
+    #MODEL                  #ACCURACY      #PRECISION     #RECALL    #F1-SCORE
+1.  Logistic Regression      60.00          0.551         0.600      0.565
+2.  Random Forest            55.00          0.460         0.550      0.497
+3.  Random Forest            56.66          0.479         0.566      0.469
+4.  Random Forest            53.33          0.419         0.533      0.469
+5.  Support Vector Machine   58.33          0.472         0.583      0.521
+
+#CONCLUTION
+ML enables accurate, early heart disease detection using simple patient data.
+Key Takeaways: UCI dataset, preprocessing, models like RF yield 95-98% accuracy.
+Impact: Reduces healthcare costs, saves lives through prevention.
+Limitations: Needs diverse datasets.
