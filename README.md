@@ -6,14 +6,14 @@ heart_disease = fetch_ucirepo(id=45)
 # data (as pandas dataframes)
 X = heart_disease.data.features
 y = heart_disease.data.targets
+
 # metadata
-print(heart_disease.metadata)
+heart_disease.metadata
+
 # variable information
-print(heart_disease.variables)
+heart_disease.variables
 
-heart_disease
-
-X
+x
 
 y
 
@@ -23,21 +23,19 @@ y.value_counts()
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from ucimlrepo import fetch_ucirepo
-# Load dataset
-heart_disease = fetch_ucirepo(id=45)
-X = heart_disease.data.features
-y = heart_disease.data.targets
+
 # Combine into one DataFrame
 data = pd.concat([X, y], axis=1)
 data = data.dropna()  # drop NaN rows
 
-data
-
 print("Dataset shape:", data.shape)
+
 print("\nData Types:\n", data.dtypes)
+
 print("\nMissing Values:\n", data.isnull().sum())
+
 print("\nTarget Distribution:\n", data[y.columns[0]].value_counts())
+
 # Summary statistics
 print("\nSummary Statistics:\n", data.describe())
 
@@ -76,6 +74,7 @@ for feature in features_to_plot:
 import pandas as pd
 import numpy as np
 from ucimlrepo import fetch_ucirepo
+
 # ML tools
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
@@ -103,14 +102,14 @@ scaler = StandardScaler()
 X_scaled = scaler.fit_transform(X)
 
 # Step 4: Train-Test Split
-X_train, X_test, y_train, y_test = train_test_split(
-    X_scaled, y, test_size=0.2, random_state=42, stratify=y
-)
+X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42, stratify=y)
 
 # Step 5: Define Models
 models = {
     "Logistic Regression": LogisticRegression(max_iter=1000),
-    "Random Forest": RandomForestClassifier(n_estimators=100, random_state=42),
+    "Random Forest1": RandomForestClassifier(n_estimators=100, random_state=42),
+    "Random Forest2": RandomForestClassifier(n_estimators=50, random_state=42),
+    "Random Forest3": RandomForestClassifier(n_estimators=150, random_state=42),
     "Support Vector Machine": SVC(kernel='rbf', probability=True, random_state=42)
 }
 
@@ -134,4 +133,3 @@ for name, model in models.items():
 results_df = pd.DataFrame(results, columns=["Model", "Accuracy", "Precision", "Recall", "F1-score"])
 print("\nModel Performance Comparison:")
 print(results_df)
-
